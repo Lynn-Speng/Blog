@@ -15,7 +15,7 @@
         <img alt="Cover Image" class="min-w-full max-w-full" v-if="post.Cover" :src="post.Cover[0].url" />
       </div>
 
-      <NotionRenderer class="post-content text-indent pb-2 pt-8 px-7 text-justify" :blockMap="blockMap" fullPage />
+      <NotionRenderer class="post-content text-indent pb-2 pt-8 px-7" :blockMap="blockMap" fullPage />
 
       <div class="px-7">
         <PostTags :tag="post.Tag" />
