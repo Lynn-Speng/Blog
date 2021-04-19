@@ -1,0 +1,12 @@
+{
+  "rewrites": [
+    {
+      "source": "/:year/:month/:day/:slug",
+      "destination": "/"
+    },
+    {
+      "source": "/tag/:tag",
+      "destination": "/"
+    }
+  ]
+}
