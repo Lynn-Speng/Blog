@@ -20,8 +20,8 @@
 
     <footer class="flex flex-col items-center justify-center mb-3 mt-10 font-serif text-sm">
       <span class="mx-1">
-        Powered by <a href="https://gridsome.org">Gridsome</a> and <a href="https://tailwindcss.com">Tailwind</a>.
-        Deployed on <a href="https://vercel.com">Vercel</a>.
+        Powered by <a href="https://cn.vuejs.org">Vue</a> and <a href="https://tailwindcss.com">Tailwind</a>. Deployed
+        on <a href="https://vercel.com">Vercel</a>.
       </span>
       <span class="mx-1">
         Thanks for
