@@ -90,7 +90,7 @@ export default {
 
 @keyframes highlight {
   to {
-    background-size: 100% 38%;
+    background-size: 100% 30%;
   }
 }
 
