@@ -1,16 +1,5 @@
 module.exports = {
-  presets: [
-    [
-      "@vue/cli-plugin-babel/preset",
-      {
-        useBuiltIns: "usage",
-        corejs: {
-          version: "3.10",
-          proposals: true,
-        },
-      },
-    ],
-  ],
+  presets: ["@vue/cli-plugin-babel/preset"],
   plugins: [
     [
       "@babel/plugin-transform-runtime",
