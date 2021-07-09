@@ -13,7 +13,7 @@
         <font-awesome class="text-red-800 dark:text-red-800" :icon="['fas', 'home']" />
         &nbsp; Home
       </a>
-      <a class="badge" href="https://github.com/Lynn-Speng" target="_blank">
+      <a class="badge" href="https://github.com/LynnSpeng" target="_blank">
         <font-awesome class="text-black dark:text-white" :icon="['fab', 'github']" />
         &nbsp; Github
       </a>
