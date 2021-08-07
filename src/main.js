@@ -13,11 +13,11 @@ import App from "@/App.vue";
 import router from "./router";
 import Loading from "@/components/Loading.vue";
 
-const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID || "aa3d6401e1484aab8a81e04cbd7cbda8";
-
 Vue.config.productionTip = false;
 Vue.prototype.$siteName = "Lynn's Blog";
-Vue.prototype.$NOTION_BLOG_ID = NOTION_BLOG_ID;
+Vue.prototype.$DATABASE_ID = process.env.DATABASE_ID;
+Vue.prototype.$NOTION_API_KEY = process.env.NOTION_API_KEY; // official api key // TODO
+Vue.prototype.$NOTION_API_URL = process.env.NOTION_API_URL; // unofficial api worker url
 
 Vue.use(VueMeta);
 Vue.use(VueRouter);

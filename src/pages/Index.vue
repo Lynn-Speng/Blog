@@ -12,7 +12,7 @@
 <script>
 import Author from "@/components/Author.vue";
 import PostCard from "@/components/PostCard.vue";
-import { getPageTable } from "vue-notion";
+import { getPages } from "@/utils";
 
 export default {
   components: {
@@ -26,8 +26,8 @@ export default {
   },
   data: () => ({ posts: null }),
   async created() {
-    const results = await getPageTable(this.$NOTION_BLOG_ID);
-    this.posts = results.filter(post => post.Published);
+    const posts = await getPages(this.$DATABASE_ID);
+    this.posts = posts;
   },
 };
 </script>

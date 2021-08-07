@@ -12,7 +12,12 @@
       class="fade mx-auto my-10 pb-7 max-w-2xl leading-7 dark:bg-gray-900 bg-white rounded-md shadow-lg overflow-hidden"
     >
       <div class="overflow-hidden">
-        <img alt="Cover Image" class="min-w-full max-w-full" v-if="post.Cover" :src="post.Cover[0].url" />
+        <img
+          alt="Cover Image"
+          class="min-w-full max-w-full"
+          v-if="post.Cover"
+          :src="getImageUrl(post.Cover[0].rawUrl, post.id)"
+        />
       </div>
 
       <NotionRenderer class="post-content text-indent pb-2 pt-8 px-7" :blockMap="blockMap" fullPage />
@@ -32,7 +37,8 @@
 <script>
 import PostMeta from "@/components/PostMeta";
 import PostTags from "@/components/PostTags";
-import { NotionRenderer, getPageTable, getPageBlocks } from "vue-notion";
+import { NotionRenderer } from "vue-notion";
+import { getPageBlocksByPath, parsePageMetaInfo, getImageUrl } from "@/utils";
 
 export default {
   components: {
@@ -59,14 +65,15 @@ export default {
       blockMap: null,
     };
   },
+  methods: {
+    getImageUrl,
+  },
   async created() {
     const { year, month, day, slug } = this.$route.params;
-    const results = await getPageTable(this.$NOTION_BLOG_ID);
-    const posts = results.filter(
-      post => post.Published && post.Slug == slug && post.Date === [year, month, day].join("-"),
-    );
-    this.post = await posts[0];
-    this.blockMap = await getPageBlocks(posts[0].id);
+    const blockMap = await getPageBlocksByPath(year, month, day, slug);
+    const post = await parsePageMetaInfo(blockMap);
+    this.post = post;
+    this.blockMap = blockMap;
   },
 };
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div v-if="posts">
-    <h1 class="mb-10 text-center"># {{ tag }}</h1>
+    <h1 class="mb-10 text-center"># {{ tag.charAt(0).toUpperCase() + tag.slice(1) }}</h1>
 
     <div class="fade">
       <PostCard v-for="post in posts" :key="post.id" :post="post" :hideCover="true" />
@@ -11,7 +11,7 @@
 
 <script>
 import PostCard from "@/components/PostCard.vue";
-import { getPageTable } from "vue-notion";
+import { getPagesByTag } from "@/utils";
 
 export default {
   components: {
@@ -31,8 +31,8 @@ export default {
   },
   async created() {
     const { tag } = this.$route.params;
-    const results = await getPageTable(this.$NOTION_BLOG_ID);
-    this.posts = results.filter(post => post.Published && post.Tag.toLowerCase() === tag);
+    const posts = await getPagesByTag(tag);
+    this.posts = posts;
     this.tag = tag;
   },
 };
