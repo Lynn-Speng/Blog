@@ -1,13 +1,13 @@
-export const getPages = async (pageId, apiUrl = process.env.NOTION_API_URL) =>
+export const getPages = async (pageId, apiUrl = process.env.VUE_APP_NOTION_API_URL) =>
   await fetch(`${apiUrl}/table/${pageId}`).then(res => res.json());
 
-export const getPagesByTag = async (tag, apiUrl = process.env.NOTION_API_URL) =>
+export const getPagesByTag = async (tag, apiUrl = process.env.VUE_APP_NOTION_API_URL) =>
   await fetch(`${apiUrl}/tag/${tag}`).then(res => res.json());
 
-export const getPageBlocksByPageId = async (pageId, apiUrl = process.env.NOTION_API_URL) =>
+export const getPageBlocksByPageId = async (pageId, apiUrl = process.env.VUE_APP_NOTION_API_URL) =>
   await fetch(`${apiUrl}/page/${pageId}`).then(res => res.json());
 
-export const getPageBlocksByPath = async (year, month, day, slug, apiUrl = process.env.NOTION_API_URL) =>
+export const getPageBlocksByPath = async (year, month, day, slug, apiUrl = process.env.VUE_APP_NOTION_API_URL) =>
   await fetch(`${apiUrl}/path/${year}/${month}/${day}/${slug}`).then(res => res.json());
 
 export const parsePageMetaInfo = pageBlock => {
@@ -34,5 +34,5 @@ export const parsePageMetaInfo = pageBlock => {
 };
 
 export const getImageUrl = (rawUrl, pageId) => {
-  return `${process.env.NOTION_API_URL}/image/${encodeURIComponent(rawUrl)}/${pageId}`;
+  return `${process.env.VUE_APP_NOTION_API_URL}/image/${encodeURIComponent(rawUrl)}/${pageId}`;
 };

@@ -15,9 +15,9 @@ import Loading from "@/components/Loading.vue";
 
 Vue.config.productionTip = false;
 Vue.prototype.$siteName = "Lynn's Blog";
-Vue.prototype.$DATABASE_ID = process.env.DATABASE_ID;
-Vue.prototype.$NOTION_API_KEY = process.env.NOTION_API_KEY; // official api key // TODO
-Vue.prototype.$NOTION_API_URL = process.env.NOTION_API_URL; // unofficial api worker url
+Vue.prototype.$DATABASE_ID = process.env.VUE_APP_DATABASE_ID;
+Vue.prototype.$NOTION_API_KEY = process.env.VUE_APP_NOTION_API_KEY; // official api key // TODO
+Vue.prototype.$NOTION_API_URL = process.env.VUE_APP_NOTION_API_URL; // unofficial api worker url
 
 Vue.use(VueMeta);
 Vue.use(VueRouter);
