@@ -5,7 +5,7 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      serif: ["Newsreader", "Source Han Serif CN", "serif"],
+      serif: ["Newsreader", "Source Han Serif CN", "Noto Serif SC", "serif"],
       sans: [
         "ui-sans-serif",
         "system-ui",
