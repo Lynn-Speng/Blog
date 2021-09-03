@@ -23,8 +23,7 @@ archive = "archives"
 
 
 [permalinks]
-tag = "/tag/:slug"
-posts = "/:year/:month/:day/:slug"
+posts = "/posts/:year/:month/:day/:slug"
 
 
 [minify]
