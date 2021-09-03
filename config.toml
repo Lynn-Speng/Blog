@@ -1,0 +1,33 @@
+baseURL = 'http://blog.icetwilight.com/'
+languageCode = 'en-us'
+title = "Lynn's Blog"
+theme = "icetwilight"
+
+paginate = 10
+disableKinds = ["taxonomy"]
+ignoreErrors = ["error-disable-taxonomy"]
+enableEmoji = true
+# enableGitInfo = true
+hasCJKLanguage = true
+
+
+[params]
+github = "LynnSpeng"
+telegram = "LynnSpeng"
+email = "Lynn.Speng@outlook.com"
+
+
+[taxonomies]
+tag = "tags"
+archive = "archives"
+
+
+[permalinks]
+tag = "/tag/:slug"
+posts = "/:year/:month/:day/:slug"
+
+
+[minify]
+[minify.tdewolff]
+[minify.tdewolff.html]
+keepWhitespace = false

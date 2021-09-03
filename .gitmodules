@@ -1,0 +1,3 @@
+[submodule "themes/icetwilight"]
+	path = themes/icetwilight
+	url = https://github.com/LynnSpeng/hugo-theme-icetwilight
